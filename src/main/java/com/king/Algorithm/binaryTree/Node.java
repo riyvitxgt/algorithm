@@ -31,17 +31,46 @@ public class Node {
 		}
 	}
 
-	public void print(){
+	//中序遍历（先左，再根，后右）
+	public void printMid(){
 		if(this.getLeft() != null){
-			this.getLeft().print();
+			this.getLeft().printMid();
 		}
 		
 		System.out.println(this.getData());
 		
 		if(this.getRight() != null){
-			this.getRight().print();
+			this.getRight().printMid();
 		}
 	}
+	
+	//先序遍历（先根，再左，后右）
+	public void printLeft(){
+		System.out.println(this.getData());
+		
+		if(this.getLeft() != null){
+			this.getLeft().printLeft();
+		}
+		
+		if(this.getRight() != null){
+			this.getRight().printLeft();
+		}
+	}
+	
+	//后序遍历
+	public void printRight(){
+		if(this.getRight() != null){
+			this.getRight().printRight();
+		}
+		
+		System.out.println(this.getData());
+		
+		if(this.getLeft() != null){
+			this.getLeft().printRight();
+		}
+		
+	}
+	
 	public void setData(Comparable data) {
 		this.data = data;
 	}

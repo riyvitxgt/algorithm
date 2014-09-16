@@ -19,7 +19,7 @@ public class Tree {
 	
 	public void printNode(){
 		if(root != null){
-			root.print();
+			root.printLeft();
 		}
 	}
 }
